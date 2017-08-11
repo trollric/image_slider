@@ -4,19 +4,23 @@
     <meta charset="utf-8">
     <title>iSlide</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
+
   </head>
   <body>
   <div class="wrapper">
     <div id="slider">
-        <img src="images/one.png" alt="red background 1">
-        <img src="images/two.png" alt="red background 2">
-        <img src="images/three.png" alt="red background 3">
-        <img src="images/four.png" alt="red background 4">
+        <img id="1" src="images/one.png" alt="red background 1">
+        <img id="2" src="images/two.png" alt="red background 2">
+        <img id="3" src="images/three.png" alt="red background 3">
+        <img id="4" src="images/four.png" alt="red background 4">
     </div>
     <a class="left" href="#">Previous</a>
     <a class="right" href="#">Next</a>
   </div>
+
+  <!--Load the jScripts into the bottom so that html loads first-->
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
   </body>
 </html>
