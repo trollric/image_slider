@@ -8,8 +8,8 @@ $(document).ready(function(){
   startSlider();
 });
 
-function startSlider(){  
-  var loop = setInterval(function(){
+function startSlider(){
+  loop = setInterval(function(){
 
     if(sliderNext > count){
       sliderNext = 1;
@@ -32,7 +32,12 @@ function prev(){
   showSlide(newSlide);
 }
 
+function stopLoop(){
+  window.clearInterval(loop);
+}
+
 function showSlide(id){
+  stopLoop();
   if(id > count){
     id = 1;
   }else if(id<1){
@@ -43,4 +48,12 @@ function showSlide(id){
   $("#slider>img#"+id).fadeIn(300);
   sliderInt = id;
   sliderNext = id+1;
+
+  startSlider();
 }
+
+$("#slider>img").hover(function(){
+  stopLoop();
+},function(){
+  startSlider();
+});
